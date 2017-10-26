@@ -10,9 +10,12 @@
 #import "Config.h"
 @implementation ConfigManager
 
-- (void) setConfigsManager:(id)configs {
+
+- (void) ProcessJsonConfig {
+    id configObject = [self GetJsonObject:@"Configs" withType:@"json"];
+    
     NSMutableArray *tmpConfigs = [NSMutableArray new];
-    for (id config in [configs objectForKey:@"configs"]) {
+    for (id config in [configObject objectForKey:@"configs"]) {
         Config *configObj = [[Config alloc] init];
         [configObj setConfig:config];
         
@@ -21,6 +24,7 @@
     
     _configs = tmpConfigs;
     _count = tmpConfigs.count;
+    
 }
 
 @end

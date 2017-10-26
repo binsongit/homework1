@@ -11,9 +11,12 @@
 
 @implementation ScheduleManager
 
-- (void) setSchedules:(id)schedules {
+
+- (void) ProcessJsonConfig {
+    id scheduleObject = [self GetJsonObject:@"Schedules" withType:@"json"];
+    
     NSMutableArray *tmpSchedules = [NSMutableArray new];
-    for (id schedule in [schedules objectForKey:@"schedules"]) {
+    for (id schedule in [scheduleObject objectForKey:@"schedules"]) {
         Schedule *scheduleObj = [[Schedule alloc] init];
         [scheduleObj setSchedule:schedule];
         

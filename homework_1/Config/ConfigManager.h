@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JsonManager.h"
 
-@interface ConfigManager : NSObject
+@interface ConfigManager : JsonManager
 
 @property (strong, nonatomic, readonly) NSArray *configs;
 
 @property (readonly) NSUInteger count;
 
-- (void) setConfigsManager:(id)configs;
+
+- (void) ProcessJsonConfig;
 @end

@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JsonManager.h"
 
-@interface ScheduleManager : NSObject
+@interface ScheduleManager : JsonManager
 
 @property (strong, nonatomic, readonly) NSArray *scheduleArry;
-
-- (void) setSchedules:(id)schedules;
 
 @end
